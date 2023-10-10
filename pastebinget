@@ -1,1 +1,19 @@
-local URL = ""
+print("Github Auto Updater: autosource")
+local Github = "https://github.com/DatBeSavage/MC/blob/main/autosource"
+
+local response = http.get(Github)
+
+if response then
+    print("Connected to Github..")
+    local file = response.readAll()
+    response.close()
+    local f = fs.open("autosource", "w")
+    f.write(file)
+    f.close()
+    print("File updated, running...")
+    sleep(2)
+
+    shell.run("autosource")
+else
+    print("File not found")
+end

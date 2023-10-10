@@ -1,5 +1,5 @@
 print("Github Auto Updater: autosource")
-local Github = "https://github.com/DatBeSavage/MC/blob/main/autosource"
+local Github = "https://raw.githubusercontent.com/DatBeSavage/MC/main/autosource"
 
 local response = http.get(Github)
 

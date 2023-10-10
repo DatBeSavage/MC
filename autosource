@@ -27,3 +27,5 @@ local function centerText(y, text, color)
 end
 
 text(1,1, "Test", colors.green)
+
+-- test?

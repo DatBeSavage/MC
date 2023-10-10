@@ -1,0 +1,29 @@
+local monitor = peripheral.find("monitor")
+
+if not monitor then
+    print("No monitor found")
+    return
+end
+
+local w, h = monitor.getSize()
+
+
+local function clear()
+    monitor.setBackgroundColor(colors.black)
+    monitor.clear()
+end
+
+clear()
+
+local function text(x, y, text, color)
+    monitor.setCursorPos(x, y)
+    monitor.setTextColor(color)
+    monitor.write(text)
+end
+
+local function centerText(y, text, color)
+    local x = math.floor((w - #text) / 2)
+    text(x, y, text, color)
+end
+
+text(1,1, "Test", colors.green)
